@@ -4,19 +4,14 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
     './src/index'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/dist/'
+    path: path.join(__dirname, 'build'),
+    filename: 'index.js',
+    library: 'reactABNTest',
+    libraryTarget: 'umd'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     loaders: [{
       test: /\.js$/,
@@ -24,9 +19,19 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }]
   },
-  externals: {
-    'react/addons': true,
-    'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true
-  }
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
+  ],
+  externals: [{
+    'react': {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React'
+    }
+  }]
 };
