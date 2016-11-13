@@ -1,13 +1,32 @@
 {
   "name": "react-abn-test",
   "version": "0.0.0",
+  "repository": "https://github.com/AlexChittock/react-abn-test",
+  "author": "alexchittock",
+  "license": "MIT",
+  "main": "build/index.js",
   "scripts": {
     "start": "node server.js",
     "test": "mocha-webpack --webpack-config webpack.config-test.js \"src/**/*.test.js\"",
     "build": "webpack --config webpack.config-build.js"
   },
-  "author": "alexchittock",
-  "license": "MIT",
+  "tags": [
+    "react",
+    "abn-test"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "ab-test",
+    "ab",
+    "abn-test",
+    "abn",
+    "experiment",
+    "experiments"
+  ],
+  "dependencies": {
+    "react-cookie": "^0.4.8",
+  },
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
@@ -20,15 +39,14 @@
     "eslint-plugin-react": "^3.6.2",
     "mocha": "^3.1.2",
     "mocha-webpack": "^0.7.0",
-    "react-cookie": "^0.4.8",
     "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.12.1",
     "webpack-node-externals": "^1.5.4",
-    "es6-enum": "^1.1.0"
+    "es6-enum": "^1.1.0",
+    "react-dom": "^15.0.1"
   },
   "peerDependencies": {
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react": "^0.14.0 || ^15.0.0"
   }
 }
