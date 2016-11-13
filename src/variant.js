@@ -1,8 +1,8 @@
-import React, { Children, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
 const Variant = ({ name, weight = 1, children }) =>
   {
-    return Children.only(children)
+    return children
   }
 
 Variant.propTypes = {
