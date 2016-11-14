@@ -6,9 +6,8 @@
   "license": "MIT",
   "main": "build/index.js",
   "scripts": {
-    "start": "node server.js",
     "test": "mocha-webpack --webpack-config webpack.config-test.js \"src/**/*.test.js\"",
-    "build": "webpack --config webpack.config-build.js"
+    "build": "webpack --config webpack.config.js"
   },
   "tags": [
     "react",
