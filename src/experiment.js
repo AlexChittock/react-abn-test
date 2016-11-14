@@ -4,7 +4,7 @@ import Variant from './variant'
 
 import weightSelector from './selectors/weight-selector'
 import nameSelector from './selectors/name-selector'
-import cookiePersistence from './persistence'
+import sessionPersistence from './persistence/session'
 
 const Experiment = ({ name, selector = weightSelector, onImpression, persistence = cookiePersistence, children }) =>
   {

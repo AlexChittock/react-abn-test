@@ -1,8 +1,9 @@
 import { Children } from 'react'
 
 import filter from './variant-filter'
-import normaliseWeight from '../normalise-weight'
 import getVariantIterator from './variant-iterator'
+
+const normaliseWeight = (weight) => 0 === weight ? 0 : weight || 1
 
 const getWeightComparator = (target) => (variant) => {
   const weight = normaliseWeight(variant.props.weight)
